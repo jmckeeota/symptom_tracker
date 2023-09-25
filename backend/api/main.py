@@ -11,7 +11,9 @@ models.Base.metadata.create_all(bind=engine)
 
 origins = [
     "http://localhost:3000",
-    "localhost:3000"
+    "localhost:3000",
+    "http://frontend:3000",
+    "frontend:3000"
 ]
 
 netapi.add_middleware(

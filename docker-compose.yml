@@ -6,10 +6,10 @@ services:
     #   - backend
     ports:
       - 3000:3000
+    environment:
+      REACT_APP_API_URL: http://localhost:8432
     volumes:
       - ./frontend/symptom-tracker:/symptom-tracker
-    command: ["npm", "start"]
-    # command: ["tail", "-f", "/dev/null"]
   
   backend:
     build: ./backend
@@ -26,6 +26,7 @@ services:
       USER: admin
       PASSWORD: admin
       CONNECTION: db
+      USE_HTTPS: False
 
   db: 
     image: postgres:alpine3.17

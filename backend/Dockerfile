@@ -5,10 +5,10 @@ RUN apk update
 RUN apk add openssl
 RUN apk add postgresql
 
-COPY requirements.txt .
-COPY entrypoint.sh .
-COPY insert_data.sql .
-
+# COPY requirements.txt .
+# COPY entrypoint.sh .
+# COPY insert_data.sql .
+COPY . /api
 RUN python -m pip install --upgrade pip
 RUN pip install -r requirements.txt
 
