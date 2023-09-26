@@ -6,4 +6,4 @@ data:
   postgres-url: postgres-service
   engine: postgresql
   database: tracker
-  backend-url: http://backend.minikube.local
+  backend-url: http://backend.local:30002
