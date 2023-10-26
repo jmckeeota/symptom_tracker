@@ -15,7 +15,6 @@ origins = [
     "http://frontend:3000",
     "frontend:3000",
     "http://frontend.local:30000"
-    
 ]
 
 netapi.add_middleware(
@@ -50,11 +49,9 @@ async def read_entries(skip: int = 0, limit: int=100, db: Session = Depends(get_
 @netapi.post("/entries/", response_model=schemas.Entry)
 async def create_entry(entry: schemas.EntryCreate, db: Session = Depends(get_db)):
     # Checks go here.  Raise exceptions
-
     return crud.create_entry(db, entry=entry)
 
 @netapi.delete("/entries/{entry_id}", response_model=schemas.Entry)
 async def delete_entry(entry_id: int, db: Session = Depends(get_db)):
     # Checks go here.  Raise exceptions
-
     return crud.delete_entry(db, entry_id=entry_id)

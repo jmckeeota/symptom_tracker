@@ -14,7 +14,6 @@ class Symptoms(Base):
 
     symptom_item = relationship("SymptomItems", back_populates="symptom")
 
-
 class Entries(Base):
     __tablename__ = "entries"
     

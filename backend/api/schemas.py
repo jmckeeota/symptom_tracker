@@ -2,8 +2,8 @@ from pydantic import BaseModel
 import datetime
 from typing import Optional, List, ForwardRef, Tuple
 
-class SymptomBase(BaseModel):
- 
+class SymptomBase(BaseModel): 
+
     class Config:
         orm_mode = True
 
@@ -14,6 +14,7 @@ class Symptom(SymptomBase):
 EntryRef = ForwardRef('Entry')
 
 class SymptomItemBase(BaseModel):
+
     class Config:
         orm_mode = True
 
@@ -25,7 +26,6 @@ class SymptomItem(SymptomItemBase):
 class SymptomItemCreate(SymptomItemBase):
     symptom_id: int
     symptom_description: Optional[str] | None = None
-
 
 class EntryBase(BaseModel):
     class Config:
